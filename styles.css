@@ -38,3 +38,7 @@ main {
 .nav-link.active {
     color: #007bff;
 }
+
+.bg-default { 
+    background-color: #0e60a8;
+}
