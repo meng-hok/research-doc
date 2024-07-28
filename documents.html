@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .card {
+            background-color: #0e60a8;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin: 10px;
+        }
+        .plus-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky" id="target_div">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link " href="index.html">
+                                ទំរាំដើម <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="documents.html">
+                                បញ្ចូលឯកសារ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reports.html">
+                                រាយការណ៍លទ្ធផល
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculations.html">
+                                បញ្ជីគណនា
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">បញ្ចូលរបាយការណ៍</h1>
+                </div>
+
+                <div class="container mt-5">
+                    <div class="row">
+                        
+                        <div class="col-md-4 x-target">
+                            <div class="card">
+                                <div class="plus-icon">+</div>
+                                <p>របាយការណ៍<br>សរុបជារៀងរាល់ឆ្នាំ<br>២០២៥</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 x-target">
+                            <div class="card">
+                                <div class="plus-icon">+</div>
+                                <p>គម្រោង ៥</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 x-target">
+                            <div class="card">
+                                <div class="plus-icon">+</div>
+                                <p>គម្រោង ៦</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 x-target">
+                            <div class="card">
+                                <div class="plus-icon">+</div>
+                                <p>បរិយាយ<br>ប្រកាសពន្ធអាករ<br>I.R.S. កម្រិត<br>ឆ្នាំ ២០២០</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 x-target">
+                            <div class="card">
+                                <div class="plus-icon">+</div>
+                                <p>គម្រោង ៣</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 x-target">
+                            <div class="card">
+                                <div class="plus-icon">+</div>
+                                <p>គម្រោង ៤</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 x-target">
+                            <div class="card">
+                                <div class="plus-icon">+</div>
+                                <p>បង្កើតបន្ថែម </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        $(".x-target").on("click",function (){
+            window.location.href = "document_detail.html"
+        });
+    </script>
+</body>
+</html>

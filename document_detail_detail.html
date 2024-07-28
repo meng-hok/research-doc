@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documents</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky" id="target_div">
+                    <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">
+                                ទំរាំដើម
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="documents.html">
+                                បញ្ចូលឯកសារ <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reports.html">
+                                រាយការណ៍លទ្ធផល
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculations.html">
+                                បញ្ជីគណនា
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                    <h1 class="h2">បញ្ចូលឯកសារ</h1>
+                </div>
+
+                <div class="container">
+                    <h5>Content for Documents</h5>
+                    <!-- Content for the documents page can be added here -->
+                    <div class="container mt-5">
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>ល.រ.</th>
+                                    <th>Date</th>
+                                    <th>Ministry</th>
+                                    <th>Expect Data</th>
+                                    <th>Actual Data</th>
+                                    <th>Problem</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td><input class="form-control last-year" type="date" ></input></td>
+                                    <td>
+                                        <select  class="form-control">
+                                            <option>MISTI2</option>
+                                            <option>MISTI</option>
+                                            <option>MISTI1</option>
+                                            <option>MISTI3</option>
+                                        </select>
+                                    </td>
+                                    <td><input  class="form-control " value="13"></input></td>
+                                    <td><input  class="form-control" value="15"></input></td>
+                                    <td><input  class="form-control" value="Problem 1"></input></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td><input class="form-control" type="date"></input></td>
+                                    <td>
+                                        <select  class="form-control">
+                                            <option>MISTI</option>
+                                            <option>MISTI1</option>
+                                            <option>MISTI2</option>
+                                            <option>MISTI3</option>
+                                        </select>
+                                    </td>
+                                    <td><input  class="form-control" value="15"></input></td>
+                                    <td><input  class="form-control"></input></td>
+                                    <td><input  class="form-control"></input></td>
+                                </tr>
+                                
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // $("table").on("click",function (){
+        //     window.location.href = "document_detail.html"
+        // });
+        // document.addEventListener('DOMContentLoaded', function() {
+            var dateInput = document.querySelector('.last-year');
+            var today = new Date();
+            var lastYear = new Date(today.setFullYear(today.getFullYear() - 1));
+            var year = lastYear.getFullYear();
+            var month = ('0' + (lastYear.getMonth() + 1)).slice(-2);
+            var day = ('0' + lastYear.getDate()).slice(-2);
+            var defaultDate = year + '-' + month + '-' + day;
+            dateInput.setAttribute('value', defaultDate);
+        // });
+    </script>
+</body>
+</html>

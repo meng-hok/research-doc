@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .card {
+            margin: 10px;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+        .card-orange {
+            background-color: #f57c00;
+        }
+        .card-blue {
+            background-color: #0288d1;
+        }
+        .card-green {
+            background-color: #388e3c;
+        }
+        .card-yellow {
+            background-color: #fbc02d;
+        }
+        .card-red {
+            background-color: #d32f2f;
+        }
+        .card-chart {
+            background-color: #455a64;
+        }
+        .plus-icon {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.5em;
+        }
+        .chart {
+            height: 200px;
+        }
+        .visitors {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .calendar {
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 5px;
+        }
+        .event {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky" id="target_div">
+                    <!-- <ul class="nav flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">
+                                ទំរាំដើម <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="documents.html">
+                                បញ្ចូលឯកសារ
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="reports.html">
+                                រាយការណ៍លទ្ធផល
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="calculations.html">
+                                បញ្ជីគណនា
+                            </a>
+                        </li>
+                    </ul> -->
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+                <div class="container mt-5">
+                    <!-- <h2 class="text-center mb-4">Dashboard - ហេតុវីឆន្ទៈតាម I.R.S. កំពុងឆ្នាំ ២០២០</h2> -->
+                    <div class="row">
+                        <div class="col-md-3">
+                            <div class="card card-orange">
+                                <h5>TASKS</h5>
+                                <p><strong>Task 1</strong><br>Description. Lorem ipsum dolor sit amet, consectetur.</p>
+                                <p><strong>Task 2</strong><br>Description. Lorem ipsum dolor sit amet, consectetur.</p>
+                            </div>
+                            <div class="card card-red">
+                                <h5>VISITORS TODAY</h5>
+                                <h3>1,521</h3>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="card card-chart">
+                                <h5>STATISTICS</h5>
+                                <div class="chart">
+                                    <!-- Placeholder for chart -->
+                                    <img src="https://via.placeholder.com/400x200?text=Chart+Placeholder" alt="Chart">
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="card card-blue">
+                                        <h5>MONTHLY VISITS</h5>
+                                        <h3>32,211</h3>
+                                        <p>+10%</p>
+                                    </div>
+                                    <div class="card card-yellow">
+                                        <h5>PAGES VIEWS</h5>
+                                        <h3>351</h3>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="card card-green">
+                                        <h5>VISITORS</h5>
+                                        <div class="visitors">
+                                            <div>ANDROID</div>
+                                            <div>WEB</div>
+                                            <div>IOS</div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-green">
+                                        <h5>SHARES</h5>
+                                        <h3>122</h3>
+                                        <p>+05%</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card card-blue">
+                                <h5>DOWNLOADS</h5>
+                                <p><strong>PACK 3</strong><br>3,242 Lorem ipsum dolor sit amet.</p>
+                                <p><strong>PACK 1</strong><br>1,156 Lorem ipsum dolor sit amet.</p>
+                                <p><strong>WALLPAPER 22</strong><br>921 Lorem ipsum dolor sit amet.</p>
+                            </div>
+                            <div class="card card-yellow">
+                                <h5>CALENDAR</h5>
+                                <div class="calendar">
+                                    <!-- Placeholder for calendar -->
+                                    <div class="event">12</div>
+                                    <div class="event">13</div>
+                                    <div class="event">14</div>
+                                    <div class="event">15</div>
+                                    <div class="event">16</div>
+                                    <div class="event">17</div>
+                                    <div class="event">18</div>
+                                </div>
+                                <div class="mt-2">
+                                    <h5>JUNE</h5>
+                                    <p class="event"><strong>12.</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut a placerat mauris.</p>
+                                    <p class="event"><strong>18.</strong> Phasellus vehicula libero in elit tempus aliquet.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
