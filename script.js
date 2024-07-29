@@ -13,7 +13,7 @@ let str = `
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link text-white" href="reports.html">
+                <a class="nav-link text-white" href="documents.html">
                     រាយការណ៍លទ្ធផល
                 </a>
             </li>
