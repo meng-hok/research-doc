@@ -4,7 +4,7 @@ let str = `
             <ul class="nav flex-column">
             <li class="nav-item">
                 <a class="nav-link text-white " href="index.html">
-                    ទំរាំដើម <span class="sr-only">(current)</span>
+                    ទំព័រដើម <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item">
