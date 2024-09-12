@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Barcode Scanner</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- Include QuaggaJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/quagga/0.12.1/quagga.min.js"></script>
+    <style>
+        #camera {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Barcode Scanner</h1>
+    <div id="camera"></div>
+    <p id="barcode-result">Scan a barcode to see the result here.</p>
+
+    <script>
+        $(document).ready(function() {
+            // Initialize QuaggaJS
+            Quagga.init({
+                inputStream: {
+                    name: "Live",
+                    type: "LiveStream",
+                    target: document.querySelector('#camera'), // The div where the camera will be shown
+                    constraints: {
+                        facingMode: "environment" // Use the rear camera
+                    },
+                },
+                decoder: {
+                    readers: [
+                        "code_128_reader", // Common barcode format
+                        "ean_reader",      // EAN-13 format
+                        "ean_8_reader",    // EAN-8 format
+                        "upc_reader",      // UPC-A format
+                        "upc_e_reader"     // UPC-E format
+                    ],
+                },
+            }, function(err) {
+                if (err) {
+                    console.error(err);
+                    alert('Error initializing camera. Please check permissions and try again.');
+                    return;
+                }
+                console.log("Initialization finished. Ready to start");
+                Quagga.start();
+            });
+
+            // Detect barcode and log results
+            Quagga.onDetected(function(data) {
+                console.log("Barcode detected:", data.codeResult.code);
+                $('#barcode-result').text('Barcode detected: ' + data.codeResult.code);
+                // Stop Quagga after a successful scan
+                Quagga.stop();
+            });
+
+            // Error handling for detection
+            Quagga.onProcessed(function(result) {
+                const drawingCtx = Quagga.canvas.ctx.overlay,
+                      drawingCanvas = Quagga.canvas.dom.overlay;
+
+                if (result) {
+                    if (result.boxes) {
+                        drawingCtx.clearRect(0, 0, parseInt(drawingCanvas.getAttribute("width")), parseInt(drawingCanvas.getAttribute("height")));
+                        result.boxes.filter(function (box) {
+                            return box !== result.box;
+                        }).forEach(function (box) {
+                            Quagga.ImageDebug.drawPath(box, {x: 0, y: 1}, drawingCtx, {color: "green", lineWidth: 2});
+                        });
+                    }
+
+                    if (result.box) {
+                        Quagga.ImageDebug.drawPath(result.box, {x: 0, y: 1}, drawingCtx, {color: "#00F", lineWidth: 2});
+                    }
+
+                    if (result.codeResult && result.codeResult.code) {
+                        Quagga.ImageDebug.drawPath(result.line, {x: 'x', y: 'y'}, drawingCtx, {color: 'red', lineWidth: 3});
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
