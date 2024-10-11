@@ -8,8 +8,7 @@ fi
 
 # Step 1: Change the root password
 echo "Changing the root password..."
-read -sp "Enter new root password: " new_password
-echo "root:$new_password" | chpasswd
+echo "root:$1" | chpasswd
 #echo "root:newpassword" | chpasswd
 echo "Root password has been changed."
 
