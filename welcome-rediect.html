@@ -10,6 +10,7 @@
             return urlParams.get(param);
         }
         
+        const dataParam = getQueryParam('data') || 'default_data_here';
        const deepLink = `hbapp://resolve?type=inbox&data=${encodeURIComponent(dataParam)}`;
         window.location = deepLink;
         document.getElementById("paste_me").setAttribute("href", deepLink);
