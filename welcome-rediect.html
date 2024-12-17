@@ -19,15 +19,26 @@
         </div>
     </div>
     <script type="text/javascript">
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
-        
-        const dataParam = getQueryParam('data') || 'default_data_here';
-        const deepLink = `hbapp://resolve?type=inbox&data=${encodeURIComponent(dataParam)}`;
-        window.location = deepLink;
-        document.getElementById("paste_me").setAttribute("href", deepLink);
+           window.onload = function() {
+                function getQueryParam(param) {
+                    const urlParams = new URLSearchParams(window.location.search);
+                    return urlParams.get(param);
+                }
+                
+                const dataParam = getQueryParam('data') || 'default_data_here';
+                const deepLink = `hbapp://resolve?type=inbox&data=${encodeURIComponent(dataParam)}`;
+                try {
+                    // Example: Navigating to a new URL
+                    window.location = deepLink;
+                    window.close();
+                    // Other operations related to window.location
+                } catch (error) {
+                    console.error("An error occurred with window.location:", error);
+                    // Optionally, handle the error here (e.g., show an alert, fallback URL, etc.)
+                }
+                document.getElementById("paste_me").setAttribute("href", deepLink);
+    
+             }
 
     </script>
 </body>
