@@ -5,15 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome</title>
     <script type="text/javascript">
-       // window.onload = function() {
-            // Redirect to deep link
-            window.location = "hbapp://resolve?type=inbox&data=eyJ1c2VybmFtZSI6Ik5BS1JZVEciLCJzZWNyZXQiOiJkZjEyMjI2ZTBiMjE0ZGE2OGNmYTBmYTUyYTgzYTU4ZiIsImluc3RhbmNlSWQiOiIwMDAwMDAxNDI3MDMifQ";
-       // };
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+        
+       const deepLink = `hbapp://resolve?type=inbox&data=${encodeURIComponent(dataParam)}`;
+        window.location = deepLink;
+        document.getElementById("paste_me").setAttribute("href", deepLink);
+
     </script>
 </head>
 <body>
     <h1>Welcome</h1>
-      <a class="tgme_action_button_new shine" href="hbapp://resolve?type=inbox&data=eyJ1c2VybmFtZSI6Ik5BS1JZVEciLCJzZWNyZXQiOiJkZjEyMjI2ZTBiMjE0ZGE2OGNmYTBmYTUyYTgzYTU4ZiIsImluc3RhbmNlSWQiOiIwMDAwMDAxNDI3MDMifQ">Start APP</a>
+      <a class="tgme_action_button_new shine" id="paste_me" href="hbapp://resolve?type=inbox&data=eyJ1c2VybmFtZSI6Ik5BS1JZVEciLCJzZWNyZXQiOiJkZjEyMjI2ZTBiMjE0ZGE2OGNmYTBmYTUyYTgzYTU4ZiIsImluc3RhbmNlSWQiOiIwMDAwMDAxNDI3MDMifQ">Start APP</a>
 
     <p>Redirecting you to the app...</p>
 </body>
