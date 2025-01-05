@@ -25,11 +25,13 @@
                     console.error("An error occurred with window.location:", error);
                     // Optionally, handle the error here (e.g., show an alert, fallback URL, etc.)
                 }
-                setTimeout(() => {
-                    window.Telegram.WebApp.close();
-                },500)
+               
                 
              }
+
+         setTimeout(() => {
+                    window.Telegram.WebApp.close();
+            },1000)
 
     </script>
 </body>
