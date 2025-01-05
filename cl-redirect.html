@@ -9,8 +9,15 @@
 
 </head>
 <body>
-   
+     <div class="container text-center mt-5">
+        <p>Transaction Completed</p>
+        <!-- Continue Button with Bootstrap style -->
+        <button id="continueButton" class="btn btn-primary">Continue</button>
+    </div>
     <script type="text/javascript">
+        document.getElementById('continueButton').onclick = function() {
+            window.open('https://t.me/cambolink21_express_bot', '_blank');
+        };
            window.onload = function() {
                
                 const deepLink = `https://t.me/cambolink21_express_bot`;
