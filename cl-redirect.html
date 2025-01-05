@@ -15,7 +15,7 @@
                
                 const deepLink = `https://t.me/cambolink21_express_bot`;
                 try {
-                    window.Telegram.WebApp.close();
+                    
                     // Example: Navigating to a new URL
                     window.location.href = deepLink;
                     // window.close();
@@ -25,7 +25,10 @@
                     console.error("An error occurred with window.location:", error);
                     // Optionally, handle the error here (e.g., show an alert, fallback URL, etc.)
                 }
-    
+                setTimeout(() => {
+                    window.Telegram.WebApp.close();
+                },500)
+                
              }
 
     </script>
