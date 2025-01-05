@@ -14,6 +14,11 @@
            window.onload = function() {
                
                 const deepLink = `https://t.me/cambolink21_express_bot`;
+                 try {
+                    window.Telegram.WebApp.openTelegramLink(deepLink);
+                }catch(err) {
+
+                }
                 try {
                     
                     // Example: Navigating to a new URL
