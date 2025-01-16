@@ -11,7 +11,7 @@
     <div class="container mt-5 d-none">
         <!-- Center Content -->
         <div class="d-flexx justify-content-center">
-<!--             <h1>Welcome...</h1> -->
+            <h1 id="h1_text"></h1>
             <br/>
 <!--             <a class="" id="paste_me" href="hbapp://resolve?type=inbox&data=eyJ1c2VybmFtZSI6Ik5BS1JZVEciLCJzZWNyZXQiOiJkZjEyMjI2ZTBiMjE0ZGE2OGNmYTBmYTUyYTgzYTU4ZiIsImluc3RhbmNlSWQiOiIwMDAwMDAxNDI3MDMifQ"></a> -->
 
@@ -20,6 +20,20 @@
     </div>
     <script type="text/javascript">
            window.onload = function() {
+                function detectDevice() {
+                        const userAgent = navigator.userAgent.toLowerCase();
+                        const isMobile = /iphone|ipod|android|blackberry|mini|windows\sce|palm/i.test(userAgent);
+                    
+                        if (isMobile || window.innerWidth <= 768) {
+                            console.log('User is on a phone');
+                            return 'phone';
+                        } else {
+                            console.log('User is on a computer');
+                            return 'computer';
+                        }
+                    }
+
+               
                 function getQueryParam(param) {
                     const urlParams = new URLSearchParams(window.location.search);
                     return urlParams.get(param);
@@ -29,8 +43,13 @@
                 const deepLink = `hbapp://resolve?type=inbox&data=${encodeURIComponent(dataParam)}`;
                 try {
                     // Example: Navigating to a new URL
-                    window.location = deepLink;
-                    window.close();
+                    if(detectDevice() == "phone"){
+                        window.location = deepLink;
+                        window.close();
+                    }else {
+                        document.getElementById("h1_text").innerText = "Your device is not supported. Please try accessing this feature on a mobile device with the HB App installed."
+                    }
+                    
                     // Other operations related to window.location
                 } catch (error) {
                     console.error("An error occurred with window.location:", error);
